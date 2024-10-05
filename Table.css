@@ -1,0 +1,43 @@
+h1{
+    color: blue;
+}
+
+table{
+    border-style: solid;
+    width: 60%;
+    height: 60%;
+    margin: auto;
+    border-color: black;
+    text-align: center;
+}
+
+tr{
+    border-style: solid;
+}
+td{
+    border-style: solid;
+    text-align: center;
+
+}
+
+/* .table2{
+    border-style: solid;
+   height: 100%;
+   width: 100%;
+    margin: auto;
+    border-color: black;
+    text-align: center;
+}
+
+.tr2{
+    border-style: solid;
+}
+.td2{
+    border-style: solid;
+    text-align: center;
+
+} */
+
+/* .long_box{
+    height:300px
+} */

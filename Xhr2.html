@@ -1,0 +1,68 @@
+<html lang="en"></html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+  <button onclick="display()">
+   Display Data
+  </button>
+
+  <table id="myTable" border="1" style="width: 600px; text-align: center;">
+    <thead>
+        <th>
+            Id
+        </th>
+        <th>
+           Title
+        </th>
+        <th>
+           Status
+        </th>
+        
+    </thead>
+    <tbody id="myTableBody">
+         
+    </tbody>
+  </table>
+</center>
+
+<script>
+    function display(){
+        var helper = new XMLHttpRequest();
+
+        helper.onreadystatechange = function(){
+            if(helper.readyState == 4 && helper.status == 200){
+                var Result = JSON.parse(helper.responseText);
+                // console.log(Result)
+                var refToMyTableBody = document.getElementById("myTableBody");
+
+                refToMyTableBody.innerHTML = "";
+                for(var i=0;i<Result.length;i++){
+                    var result = Result[i];
+                    // console.log(result.title)
+                    var row =`<tr>
+                        <td>${result.id}</td>
+                        <td>
+                          ${result.title} 
+                        </td>
+                        <td>
+                            
+                          ${result.completed} 
+                        </td>
+                        
+                      </tr>`;
+
+              refToMyTableBody.innerHTML = refToMyTableBody.innerHTML+ row;
+                }
+            }
+        }
+
+        helper.open("GET", "https://jsonplaceholder.typicode.com/todos");
+        helper.send();
+    }
+</script>
+</body>
+</html>

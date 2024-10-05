@@ -1,0 +1,2 @@
+This is a simple paragraph in a text file. 
+It contains multiple sentences. This is to demonstrate how to read and display text content using Node.js.
